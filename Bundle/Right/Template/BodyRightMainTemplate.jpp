@@ -1,0 +1,19 @@
+#import (Config.path +'/Kernel/Template/MasterTemplate') = MasterTemplate;
+
+class BodyRightMainTemplate extends MasterTemplate {
+
+	_viewClassName = 'BodyRightTemplateMainView';
+
+	onListen : function () {
+		_super();
+		var dispatcher = serviceLocator.get('Dispatcher');
+		dispatcher.listen('toto:tata:titi', this, this.test);
+	}
+
+	test : function () {
+		alert('OK');
+	}
+
+}
+
+#export BodyRightMainTemplate;

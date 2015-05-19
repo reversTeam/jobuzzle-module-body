@@ -1,0 +1,4 @@
+invokables:
+	body_left_main_template : Body/Left/Template/BodyLeftMainTemplate
+	body_right_main_template : Body/Left/Template/View/BodyRightMainTemplate
+	body_cover_main_template : Body/Cover/Template/View/BodyCoverMainTemplate
