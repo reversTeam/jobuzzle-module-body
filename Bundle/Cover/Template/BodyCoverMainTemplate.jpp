@@ -1,0 +1,19 @@
+#import (Config.path +'/Kernel/Template/MasterTemplate') = MasterTemplate;
+
+class BodyCoverMainTemplate extends MasterTemplate {
+
+	_viewClassName = 'BodyCoverTemplateMainView';
+
+	onListen : function () {
+		_super();
+		var dispatcher = serviceLocator.get('Dispatcher');
+		dispatcher.listen('*:*:coverShow', this, this.coverShow.bind(this));
+	}
+
+	coverShow : function () {
+		this._view.coverShow();
+	}
+
+}
+
+#export BodyCoverMainTemplate;

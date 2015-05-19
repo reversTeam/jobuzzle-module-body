@@ -1,0 +1,29 @@
+#import (Config.path +'/Kernel/Autoload/MasterAutoload') = MasterAutoload;
+
+class BodyAutoload extends MasterAutoload {
+
+	confModuleName = 'Body';
+
+	onBootstrap : function () {
+		var templateManager = serviceLocator.get('TemplateManager');
+
+		var All = React['createClass']({'displayName': "All",
+
+			"render" : function () {
+				return (
+					React['createElement']("div", {id: "webApp"},
+						React['createElement'](templateManager.get('body_cover_main_template').getView(), null),
+						React['createElement'](templateManager.get('body_left_main_template').getView(), null),
+						React['createElement'](templateManager.get('body_right_main_template').getView(), null)
+					)
+				);
+			}
+
+		});
+
+		React['render'](React['createElement'](All, null), document.getElementsByTagName('body')[0]);
+	}
+
+}
+
+#export BodyAutoload;

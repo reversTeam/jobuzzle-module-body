@@ -1,0 +1,7 @@
+$web_app_height: 100%;
+
+$left_content_width : 280px;
+$left_content_height : $web_app_height;
+
+$right_content_width : calc(100% - 280px);
+$right_content_height : $web_app_height;
