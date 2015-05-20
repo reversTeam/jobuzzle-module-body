@@ -13,7 +13,7 @@ class BodyRightMainTemplate extends MasterTemplate {
 	}
 
 	test : function () {
-		alert('coverClose');
+		console.log('coverClose');
 	}
 
 }
