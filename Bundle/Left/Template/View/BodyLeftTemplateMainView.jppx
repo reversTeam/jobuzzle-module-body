@@ -3,8 +3,13 @@
 class BodyLeftTemplateMainView extends MasterView {
 
 	render : function () {
+		var elements = [
+			this.getTemplate('body_left_logo_template')
+		];
 		return (<div id="left">
-			Left
+			{elements.map(function(elem, key){
+				return elem;
+			})}
 		</div>);
 	}
 

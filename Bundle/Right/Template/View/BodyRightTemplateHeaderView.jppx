@@ -1,0 +1,23 @@
+#import (Config.path +'/Kernel/Template/View/MasterView') = MasterView;
+
+
+class BodyRightTemplateHeaderView extends MasterView {
+
+	onClick : function () {
+		var dispatcher = serviceLocator.get('Dispatcher');
+		dispatcher.trigger('Body:Right:coverShow');
+	}
+
+	render : function () {
+		return (
+			<header id="header" onClick={this.onClick}>
+				<div id="breadcrum">
+					<i className="fa fa-home"></i>
+				</div>
+			</header>
+		);
+	}
+
+}
+
+#export BodyRightTemplateHeaderView;

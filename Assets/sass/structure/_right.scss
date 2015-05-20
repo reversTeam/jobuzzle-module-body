@@ -1,0 +1,8 @@
+#right {
+	width: $right_content_width;
+	height: $right_content_height;
+	display: inline-block;
+	vertical-align: top;
+
+	@import "right/all";
+}
