@@ -1,0 +1,31 @@
+#import (Config.path +'/Kernel/Template/View/MasterView') = MasterView;
+
+class BodyCoverTemplateMainView extends MasterView {
+
+	getInitialState : function () {
+		return ({ visible : false });
+	}
+
+	coverShow : function () {
+		this.setState({ visible : true });
+	}
+
+	coverHide : function () {
+		var dispatcher = serviceLocator.get('Dispatcher');
+
+		dispatcher.trigger(this._template._referer);
+		this.setState({ visible : false });
+	}
+
+	render : function () {
+		var activeState = 'disable';
+		if (this.state.visible)
+			activeState = 'enable'
+		return (<div className={activeState} id="cover" onClick={this.coverHide.bind(this)}>
+			Covers
+		</div>);
+	}
+
+}
+
+#export BodyRightTemplateMainView;

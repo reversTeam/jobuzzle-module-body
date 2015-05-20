@@ -1,0 +1,19 @@
+#import (Config.path +'/Kernel/Template/View/MasterView') = MasterView;
+
+
+class BodyRightTemplateMainView extends MasterView {
+
+	onClick : function () {
+		var dispatcher = serviceLocator.get('Dispatcher');
+		dispatcher.trigger('Body:Right:coverShow');
+	}
+
+	render : function () {
+		return (<div id="right" onClick={this.onClick}>
+			Right
+		</div>);
+	}
+
+}
+
+#export BodyRightTemplateMainView;

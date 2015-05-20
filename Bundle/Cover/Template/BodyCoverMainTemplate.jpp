@@ -4,13 +4,19 @@ class BodyCoverMainTemplate extends MasterTemplate {
 
 	_viewClassName = 'BodyCoverTemplateMainView';
 
+	_referer = '';
+
 	onListen : function () {
-		_super();
-		var dispatcher = serviceLocator.get('Dispatcher');
+		var dispatcher = _super();
+
 		dispatcher.listen('*:*:coverShow', this, this.coverShow.bind(this));
+
+		return dispatcher;
 	}
 
-	coverShow : function () {
+	coverShow : function (s) {
+		var arg = s.split(':');
+		this._referer = arg[0] +':'+ arg[1] +':coverHide';
 		this._view.coverShow();
 	}
 
