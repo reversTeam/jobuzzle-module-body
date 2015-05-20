@@ -1,0 +1,13 @@
+#import (Config.path +'/Kernel/Template/View/MasterView') = MasterView;
+
+class BodyLeftTemplateMainView extends MasterView {
+
+	render : function () {
+		return (<div id="left">
+			Left
+		</div>);
+	}
+
+}
+
+#export BodyRightTemplateMainView;

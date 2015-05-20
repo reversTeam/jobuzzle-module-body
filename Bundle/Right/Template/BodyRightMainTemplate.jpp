@@ -5,13 +5,15 @@ class BodyRightMainTemplate extends MasterTemplate {
 	_viewClassName = 'BodyRightTemplateMainView';
 
 	onListen : function () {
-		_super();
-		var dispatcher = serviceLocator.get('Dispatcher');
-		dispatcher.listen('toto:tata:titi', this, this.test);
+		var dispatcher = _super();
+
+		dispatcher.listen('Body:Right:coverHide', this, this.test);
+
+		return dispatcher;
 	}
 
 	test : function () {
-		alert('OK');
+		alert('coverClose');
 	}
 
 }
