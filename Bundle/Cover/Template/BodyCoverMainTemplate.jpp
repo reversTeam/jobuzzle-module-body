@@ -10,8 +10,16 @@ class BodyCoverMainTemplate extends MasterTemplate {
 		var dispatcher = _super();
 
 		dispatcher.listen('*:*:coverShow', this, this.coverShow.bind(this));
+		dispatcher.listen('Client:Websocket:connect', this, this.coverHide.bind(this));
+		dispatcher.listen('Client:Websocket:reconnecting', this, this.coverShow.bind(this));
+		dispatcher.listen('Client:Websocket:reconnect_attempt', this, this.coverShow.bind(this));
+
 
 		return dispatcher;
+	}
+
+	coverHide : function () {
+		this._view.coverHide();
 	}
 
 	coverShow : function (s) {

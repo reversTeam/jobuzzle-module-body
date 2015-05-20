@@ -13,8 +13,13 @@ class BodyCoverTemplateMainView extends MasterView {
 	coverHide : function () {
 		var dispatcher = serviceLocator.get('Dispatcher');
 
-		dispatcher.trigger(this._template._referer);
-		this.setState({ visible : false });
+		if (this._template._referer) {
+			dispatcher.trigger(this._template._referer);
+			this._template._referer = null;
+		}
+		if (this.isMounted()) {
+			this.setState({ visible : false });
+		}
 	}
 
 	render : function () {
