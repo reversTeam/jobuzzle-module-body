@@ -10,7 +10,7 @@ class BodyRightTemplateMainView extends MasterView {
 
 	render : function () {
 		return (<div id="right" onClick={this.onClick}>
-			Right
+			{this.getTemplate('body_right_header_template')}
 		</div>);
 	}
 

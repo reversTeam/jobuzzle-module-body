@@ -1,0 +1,24 @@
+header#header {
+	@include background-opacity($primary_color, 0.6);
+	height : 60px;
+	width : 100%;
+	position: fixed;
+
+	div#breadcrum {
+		margin-left : 20px;
+		display: inline-block;
+
+		i.fa {
+			margin-right: 20px;
+			line-height: 60px;
+			font-size : 35px;
+			cursor: pointer;
+		}
+
+		span.path {
+			line-height: 60px;
+			font-size : 22px;
+			vertical-align: top;
+		}
+	}
+}

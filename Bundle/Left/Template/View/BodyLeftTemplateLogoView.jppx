@@ -1,0 +1,16 @@
+#import (Config.path +'/Kernel/Template/View/MasterView') = MasterView;
+
+class BodyLeftTemplateLogoView extends MasterView {
+
+	render : function () {
+		return (
+			<div id="logo_left">
+				<div id="logo"></div>
+				<h1>Jobuzzle</h1>
+			</div>
+		);
+	}
+
+}
+
+#export BodyRightTemplateLogoView;

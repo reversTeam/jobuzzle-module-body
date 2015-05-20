@@ -1,0 +1,15 @@
+#import (Config.path +'/Kernel/Template/MasterTemplate') = MasterTemplate;
+
+class BodyRightHeaderTemplate extends MasterTemplate {
+
+	_viewClassName = 'BodyRightTemplateHeaderView';
+
+	onListen : function () {
+		var dispatcher = _super();
+
+		return dispatcher;
+	}
+
+}
+
+#export BodyRightHeaderTemplate;

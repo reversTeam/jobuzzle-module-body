@@ -1,0 +1,31 @@
+div#logo_left {
+	padding-top : 20px;
+
+	div#logo {
+		background-image: url($logo_icon_left);
+		background-repeat: no-repeat;
+		background-position: bottom;
+		width : $icon_left_width;
+		height: $icon_left_height;
+		margin-left : ($left_content_width - $icon_left_width) / 2;
+	}
+
+	h1 {
+		// font-family: $primary_font;
+		color: white;
+		font-size: 48px;
+		width: 100%;
+		text-align: center;
+		margin-top : 0px;
+		font-weight: 400;
+
+		&:after {
+			display: block;
+			background-color: rgba(255, 255, 255, 0.1);
+			width: $left_content_width - 40px;
+			margin-left: 20px;
+			height: 1px;
+			content: '';
+		}
+	}
+}

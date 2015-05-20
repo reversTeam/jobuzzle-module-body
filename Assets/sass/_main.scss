@@ -1,34 +1,10 @@
 @import "vars/all";
 
 div#webApp {
+	background-image: url($webapp_background);
+	background-position: fixed;
+	background-size : cover;
 	height: $web_app_height;
 
-	#left {
-		width: $left_content_width;
-		height: $left_content_height;
-		@include background-opacity($primary_color, 0.9);
-		display: inline-block;
-	}
-
-	#right {
-		width: $right_content_width;
-		height: $right_content_height;
-		display: inline-block;
-		@include background-opacity($secondary_color, 0.9);
-		color : black;
-	}
-
-	#cover {
-		width: 100%;
-		height: 100%;
-
-		&.disable {
-			display : none;
-		}
-		&.enable {
-			position : absolute;
-			z-index: 420;
-			background: rgba(black, 0.4);
-		}
-	}
+	@import "structure/all";
 }

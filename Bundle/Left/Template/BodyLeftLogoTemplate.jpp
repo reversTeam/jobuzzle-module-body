@@ -1,0 +1,14 @@
+#import (Config.path +'/Kernel/Template/MasterTemplate') = MasterTemplate;
+
+class BodyLeftLogoTemplate extends MasterTemplate {
+
+	_viewClassName = 'BodyLeftTemplateLogoView';
+
+	onListen : function () {
+		_super();
+		var dispatcher = serviceLocator.get('Dispatcher');
+	}
+
+}
+
+#export BodyLeftLogoTemplate;
