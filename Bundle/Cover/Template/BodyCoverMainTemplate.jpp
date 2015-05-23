@@ -3,8 +3,10 @@
 class BodyCoverMainTemplate extends MasterTemplate {
 
 	_viewClassName = 'BodyCoverTemplateMainView';
-
+	_defaultOpacity = 30;
 	_referer = '';
+
+	#default get, set for _defaultOpacity;
 
 	onListen : function () {
 		var dispatcher = _super();
@@ -14,6 +16,7 @@ class BodyCoverMainTemplate extends MasterTemplate {
 		dispatcher.listen('Client:Websocket:disconnect', this, this.coverShow.bind(this));
 
 
+
 		return dispatcher;
 	}
 
@@ -21,10 +24,13 @@ class BodyCoverMainTemplate extends MasterTemplate {
 		this._view.coverHide();
 	}
 
-	coverShow : function (s) {
+	coverShow : function (s, opacity) {
 		var arg = s.split(':');
+
+		if (opacity == null || opacity == undefined)
+			opacity = this.getDefaultOpacity();
 		this._referer = arg[0] +':'+ arg[1] +':coverHide';
-		this._view.coverShow();
+		this._view.coverShow(opacity);
 	}
 
 }
