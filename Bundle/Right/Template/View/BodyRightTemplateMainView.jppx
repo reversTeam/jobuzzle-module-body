@@ -3,7 +3,7 @@
 
 class BodyRightTemplateMainView extends MasterView {
 
-	getInitialStateBis : function () {
+	initialState : function () {
 		return ({
 			current : 'example_book_main_template',
 			content : {
@@ -19,9 +19,11 @@ class BodyRightTemplateMainView extends MasterView {
 
 	changeContent : function (content) {
 		if (!this.state.content[content]) {
+			var tmp = this.state.content;
 			var template = serviceLocator.get('TemplateManager').get(content)
 			var view = template._view;
-			this.state.content[content] = React['createElement'](template.getView(this._template), null);
+			tmp[content] = React['createElement'](template.getView(this._template), null);
+			this.setState({ content : tmp });
 		}
 		this.setState({
 			current : content
@@ -29,7 +31,6 @@ class BodyRightTemplateMainView extends MasterView {
 	}
 
 	render : function () {
-		console.log(this);
 		return (<div id="right" onClick={this.onClick.bind(this)}>
 			{this.getTemplate('body_right_header_template')}
 			<div id="content">
