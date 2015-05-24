@@ -1,0 +1,26 @@
+#import (Config.path +'/Kernel/Template/View/MasterView') = MasterView;
+
+
+class BodyBaseTemplateMainView extends MasterView {
+
+	initialState : function () {
+		return ({
+			content : [
+				this.getTemplate('body_cover_main_template'),
+				this.getTemplate('body_left_main_template'),
+				this.getTemplate('body_right_main_template')
+			]
+		});
+	}
+
+	render : function () {
+		return (<div id="webApp" key={this.keyName}>
+			{this.state.content.map(function (elem, key) {
+				return <div key={key}>{elem}</div>;
+			})}
+		</div>);
+	}
+
+}
+
+#export BodyBaseTemplateMainView;
