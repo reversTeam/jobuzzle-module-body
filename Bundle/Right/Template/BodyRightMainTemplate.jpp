@@ -8,8 +8,15 @@ class BodyRightMainTemplate extends MasterTemplate {
 		var dispatcher = _super();
 
 		// dispatcher.listen('Body:Right:coverHide', this, this.test);
+		dispatcher.listen('Body:Content:change', this, this.contentChange.bind(this));
 
 		return dispatcher;
+	}
+
+	contentChange : function (trigger, datas) {
+		if (!datas || !datas.content || !datas.content == undefined || datas.content == null)
+			throw "You can\'t send an empty DOM for the content";
+		this._view.changeContent(datas.content);
 	}
 
 	test : function () {
