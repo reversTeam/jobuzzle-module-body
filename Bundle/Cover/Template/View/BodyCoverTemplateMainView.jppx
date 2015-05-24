@@ -2,7 +2,7 @@
 
 class BodyCoverTemplateMainView extends MasterView {
 
-	getInitialStateBis : function () {
+	initialState : function () {
 		return ({
 			visible : false,
 			lock : false,
