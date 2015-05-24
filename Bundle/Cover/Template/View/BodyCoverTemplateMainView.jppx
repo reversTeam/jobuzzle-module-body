@@ -42,7 +42,7 @@ class BodyCoverTemplateMainView extends MasterView {
 
 		if (this.state.visible || this.state.lock)
 			activeState = 'enable'
-		return (<div className={activeState} style={style} id="cover" onClick={this.coverHide.bind(this)}></div>);
+		return (<div className={activeState} key={this._template.getViewClassName()} style={style} id="cover" onClick={this.coverHide.bind(this)}></div>);
 	}
 
 }

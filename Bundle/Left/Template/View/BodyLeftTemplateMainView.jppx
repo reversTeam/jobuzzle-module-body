@@ -6,7 +6,7 @@ class BodyLeftTemplateMainView extends MasterView {
 		var elements = [
 			this.getTemplate('body_left_logo_template', this._template)
 		];
-		return (<div id="left">
+		return (<div id="left" key={this._template.getViewClassName()}>
 			{elements.map(function(elem, key){
 				return elem;
 			})}

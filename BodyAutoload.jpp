@@ -12,9 +12,9 @@ class BodyAutoload extends MasterAutoload {
 			"render" : function () {
 				return (
 					React['createElement']("div", {id: "webApp"},
-						React['createElement'](templateManager.get('body_cover_main_template').getView(), null),
-						React['createElement'](templateManager.get('body_left_main_template').getView(), null),
-						React['createElement'](templateManager.get('body_right_main_template').getView(), null)
+						React['createElement'](templateManager.get('body_cover_main_template').getView(), {key : 'cover'}),
+						React['createElement'](templateManager.get('body_left_main_template').getView(), {key : 'left'}),
+						React['createElement'](templateManager.get('body_right_main_template').getView(), {key : 'right'})
 					)
 				);
 			}

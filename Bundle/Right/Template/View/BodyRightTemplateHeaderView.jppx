@@ -11,7 +11,7 @@ class BodyRightTemplateHeaderView extends MasterView {
 	render : function () {
 		return (
 			<header id="header" onClick={this.onClick}>
-				<div id="breadcrum">
+				<div id="breadcrum" key={this._template.getViewClassName()}>
 					<i className="fa fa-home" data-url="/authors/theotime-riviere/books/create" onClick={this.link}></i>
 				</div>
 			</header>
