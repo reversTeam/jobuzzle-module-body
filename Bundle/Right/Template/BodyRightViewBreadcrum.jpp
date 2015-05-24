@@ -1,0 +1,39 @@
+#import (Config.path +'/Kernel/Template/MasterTemplate') = MasterTemplate;
+
+class BodyRightBreadcrumTemplate extends MasterTemplate {
+
+	_viewClassName = 'BodyRightTemplateBreadcrumView';
+
+	onListen : function () {
+		var dispatcher = _super();
+
+		dispatcher.listen('History:change:url', this, this.reload);
+
+		return dispatcher;
+	}
+
+
+	reload : function () {
+		this._view.reload();
+	}
+	
+
+	getLinks : function () {
+		var links = [];
+		var path = window.location.pathname.toString().substr(1).split('/');
+		var len = path.length;
+		var link = '';
+
+		for (var i = 0; i < len; ++i) {
+			link += '/'+ path[i];
+			links.push({
+				name : path[i].toUpperCase(),
+				link : link,
+			});
+		}
+		return links;
+	}
+
+}
+
+#export BodyRightBreadcrumTemplate;

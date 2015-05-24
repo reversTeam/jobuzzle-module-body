@@ -1,0 +1,30 @@
+#import (Config.path +'/Kernel/Template/View/MasterView') = MasterView;
+
+class BodyRightTemplateBreadcrumView extends MasterView {
+
+	initialState : function () {
+		return { path : this._template.getLinks() };
+	}
+
+	reload : function () {
+		this.setState({ path : this._template.getLinks() });
+	}
+
+	render : function () {
+		var self = this;
+
+		return (
+			<div id="breadcrum">
+				<i className="fa fa-home" data-url="/authors/theotime-riviere/books/create" data-template="example_book_main_template" onClick={this.link}></i>
+				<div id="breadcrum_link" key="all">
+					{self.state.path.map(function (elem, id) {
+						return (<span key={id} data-url={elem.link} data-template="example_book_main_template" onClick={self.link}>{' / '+ elem.name}</span>);
+					})}
+				</div>
+			</div>
+		);
+	}
+
+}
+
+#export BodyRightTemplateBreadcrumView;

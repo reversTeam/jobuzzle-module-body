@@ -3,14 +3,39 @@
 
 class BodyRightTemplateMainView extends MasterView {
 
+	initialState : function () {
+		return ({
+			current : 'example_book_main_template',
+			content : {
+				'example_book_main_template' : this.getTemplate('example_book_main_template')
+			}
+		});
+	}
+
 	onClick : function () {
 		var dispatcher = serviceLocator.get('Dispatcher');
-		dispatcher.trigger('Body:Right:coverShow');
+		// dispatcher.trigger('Body:Right:coverShow');
+	}
+
+	changeContent : function (content) {
+		if (!this.state.content[content]) {
+			var tmp = this.state.content;
+			var template = serviceLocator.get('TemplateManager').get(content)
+			var view = template._view;
+			tmp[content] = React['createElement'](template.getView(this._template), null);
+			this.setState({ content : tmp });
+		}
+		this.setState({
+			current : content
+		})
 	}
 
 	render : function () {
-		return (<div id="right" onClick={this.onClick}>
+		return (<div id="right" onClick={this.onClick.bind(this)}>
 			{this.getTemplate('body_right_header_template')}
+			<div id="content">
+				{this.state.content[this.state.current]}
+			</div>
 		</div>);
 	}
 

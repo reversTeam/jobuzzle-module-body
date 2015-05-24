@@ -13,4 +13,4 @@ class BodyLeftTemplateLogoView extends MasterView {
 
 }
 
-#export BodyRightTemplateLogoView;
+#export BodyLeftTemplateLogoView;

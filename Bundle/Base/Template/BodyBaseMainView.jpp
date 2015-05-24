@@ -1,0 +1,14 @@
+#import (Config.path +'/Kernel/Template/MasterTemplate') = MasterTemplate;
+
+class BodyBaseMainTemplate extends MasterTemplate {
+
+	_viewClassName = 'BodyBaseTemplateMainView';
+
+	onListen : function () {
+		_super();
+		var dispatcher = serviceLocator.get('Dispatcher');
+	}
+
+}
+
+#export BodyBaseMainTemplate;
