@@ -3,7 +3,7 @@
 
 class BodyRightTemplateMainView extends MasterView {
 
-	getInitialState : function () {
+	getInitialStateBis : function () {
 		return ({
 			current : 'example_book_main_template',
 			content : {
@@ -30,9 +30,9 @@ class BodyRightTemplateMainView extends MasterView {
 
 	render : function () {
 		console.log(this);
-		return (<div id="right" key={this._template.getViewClassName()} onClick={this.onClick.bind(this)}>
+		return (<div id="right" onClick={this.onClick.bind(this)}>
 			{this.getTemplate('body_right_header_template')}
-			<div id="content" key={this._template.getViewClassName()}>
+			<div id="content">
 				{this.state.content[this.state.current]}
 			</div>
 		</div>);

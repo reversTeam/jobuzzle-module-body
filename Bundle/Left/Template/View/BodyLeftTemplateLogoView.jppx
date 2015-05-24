@@ -5,7 +5,7 @@ class BodyLeftTemplateLogoView extends MasterView {
 	render : function () {
 		return (
 			<div id="logo_left">
-				<div id="logo" key={this._template.getViewClassName()}></div>
+				<div id="logo"></div>
 				<h1>Jobuzzle</h1>
 			</div>
 		);
