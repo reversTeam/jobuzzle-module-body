@@ -16,7 +16,7 @@ class BodyBaseTemplateMainView extends MasterView {
 	render : function () {
 		return (<div id="webApp" key={this.keyName}>
 			{this.state.content.map(function (elem, key) {
-				return {elem};
+				return elem;
 			})}
 		</div>);
 	}

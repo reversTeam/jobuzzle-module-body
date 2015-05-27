@@ -21,7 +21,7 @@ class BodyLeftTemplateMainView extends MasterView {
 			{this.getTemplate('body_left_logo_template')}
 			<div id="panels">
 				{this.state.elements.map(function(elem) {
-					return {elem};
+					return elem;
 				})}
 			</div>
 		</div>);
