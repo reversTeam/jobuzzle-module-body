@@ -1,0 +1,5 @@
+div#panels {
+	height: calc(100% - #{$logo_height_total});
+	overflow-y: scroll;
+	@include scrollbar-y();
+}

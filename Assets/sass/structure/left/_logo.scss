@@ -1,22 +1,24 @@
 div#logo_left {
-	padding-top : 20px;
+	padding-top : $margin_top_logo;
 
 	div#logo {
 		background-image: url($logo_icon_left);
 		background-repeat: no-repeat;
 		background-position: bottom;
+		background-size: 100%;
 		width : $icon_left_width;
 		height: $icon_left_height;
 		margin-left : ($left_content_width - $icon_left_width) / 2;
+		box-sizing: border-box;
 	}
 
 	h1 {
-		// font-family: $primary_font;
 		color: white;
+		line-height: $line_height_logo;
 		font-size: 48px;
 		width: 100%;
 		text-align: center;
-		margin-top : 0px;
+		margin : 0px 0px $margin_bottom_logo 0px;
 		font-weight: 400;
 
 		&:after {

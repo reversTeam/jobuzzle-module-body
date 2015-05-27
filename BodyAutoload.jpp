@@ -6,22 +6,10 @@ class BodyAutoload extends MasterAutoload {
 
 	onBootstrap : function () {
 		var templateManager = serviceLocator.get('TemplateManager');
-
-		var All = React['createClass']({'displayName': "All",
-
-			"render" : function () {
-				return (
-					React['createElement']("div", {id: "webApp"},
-						React['createElement'](templateManager.get('body_cover_main_template').getView(), {key : 'cover'}),
-						React['createElement'](templateManager.get('body_left_main_template').getView(), {key : 'left'}),
-						React['createElement'](templateManager.get('body_right_main_template').getView(), {key : 'right'})
-					)
-				);
-			}
-
-		});
-
-		React['render'](React['createElement'](All, null), document.getElementsByTagName('body')[0]);
+		React['render'](React['createElement'](
+			templateManager.get('body_base_main_template').getView(), null),
+			document.getElementsByTagName('body')[0]
+		);
 	}
 
 }
