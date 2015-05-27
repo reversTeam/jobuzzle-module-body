@@ -5,3 +5,4 @@ invokables:
 	body_right_header_template : Body/Left/Template/BodyRightHeaderTemplate
 	body_cover_main_template : Body/Cover/Template/BodyCoverMainTemplate
 	body_right_breadcrum_template : Body/Right/Template/BodyRightBreadcrumTemplate
+	body_base_main_template : Body/Base/Template/BodyBaseMainTemplate

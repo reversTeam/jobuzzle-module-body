@@ -2,14 +2,28 @@
 
 class BodyLeftTemplateMainView extends MasterView {
 
+	initialState : function () {
+		return {
+			elements : []
+		}
+	}
+
+	addElements : function (datas) {
+		var elements = this.state.elements;
+		var template = this.getTemplate(datas.templateName);
+
+		elements.push(template);
+		this.setState({ elements : elements });
+	}
+
 	render : function () {
-		var elements = [
-			this.getTemplate('body_left_logo_template', this._template)
-		];
 		return (<div id="left">
-			{elements.map(function(elem){
-				return elem;
-			})}
+			{this.getTemplate('body_left_logo_template')}
+			<div id="panels">
+				{this.state.elements.map(function(elem) {
+					return {elem};
+				})}
+			</div>
 		</div>);
 	}
 
