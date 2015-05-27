@@ -3,8 +3,13 @@ $web_app_height: 100%;
 $left_content_width : 280px;
 $left_content_height : $web_app_height;
 
-$right_content_width : calc(100% - 280px);
+$right_content_width : calc(100% - #{$left_content_width});
 $right_content_height : $web_app_height;
 
-$icon_left_width : 125px;
-$icon_left_height : 125px;
+$icon_left_width : 100px;
+$icon_left_height : 100px;
+
+$margin_top_logo : 20px;
+$margin_bottom_logo : 20px;
+$line_height_logo : 60px;
+$logo_height_total : $icon_left_height + $margin_bottom_logo + $margin_top_logo + $line_height_logo + 1px;

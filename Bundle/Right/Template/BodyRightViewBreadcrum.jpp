@@ -12,11 +12,9 @@ class BodyRightBreadcrumTemplate extends MasterTemplate {
 		return dispatcher;
 	}
 
-
 	reload : function () {
 		this._view.reload();
 	}
-	
 
 	getLinks : function () {
 		var links = [];

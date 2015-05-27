@@ -5,8 +5,15 @@ class BodyLeftMainTemplate extends MasterTemplate {
 	_viewClassName = 'BodyLeftTemplateMainView';
 
 	onListen : function () {
-		_super();
-		var dispatcher = serviceLocator.get('Dispatcher');
+		var dispatcher = _super();
+
+		dispatcher.listen('Body:Left:add', this, this.addElements.bind(this));
+
+		return dispatcher;
+	}
+
+	addElements : function (trigger, templateName) {
+		this._view.addElements(templateName);
 	}
 
 }

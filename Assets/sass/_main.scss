@@ -2,9 +2,11 @@
 
 div#webApp {
 	background-image: url($webapp_background);
-	background-position: fixed;
+	background-attachment: fixed;
 	background-size : cover;
 	height: $web_app_height;
+	width: 100%;
+	position: fixed;
 
 	@import "structure/all";
 }
