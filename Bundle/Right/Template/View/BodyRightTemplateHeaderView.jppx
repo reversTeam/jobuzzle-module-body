@@ -3,14 +3,9 @@
 
 class BodyRightTemplateHeaderView extends MasterView {
 
-	onClick : function () {
-		var dispatcher = serviceLocator.get('Dispatcher');
-		dispatcher.trigger('Body:Right:coverShow');
-	}
-
 	render : function () {
 		return (
-			<header id="header" onClick={this.onClick}>
+			<header id="header">
 				{this.getTemplate('body_right_breadcrum_template')}
 			</header>
 		);
