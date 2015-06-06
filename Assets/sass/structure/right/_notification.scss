@@ -1,0 +1,13 @@
+div#notifications {
+	position: fixed;
+	margin-top: $line_height_logo;
+	width: $width_panel_notification;
+	height: calc(100% - #{$line_height_logo});
+	right: $width_panel_notification * -1;
+	transition: 0.3s;
+	z-index: 1001;
+
+	&.open {
+		right: 0px;
+	}
+}

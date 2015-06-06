@@ -15,8 +15,6 @@ class BodyCoverMainTemplate extends MasterTemplate {
 		dispatcher.listen('Client:Websocket:connect', this, this.coverHide.bind(this));
 		dispatcher.listen('Client:Websocket:disconnect', this, this.coverShow.bind(this));
 
-
-
 		return dispatcher;
 	}
 

@@ -3,6 +3,7 @@
 	height: $right_content_height;
 	display: inline-block;
 	vertical-align: top;
+	overflow-y: scroll;
 
 	@import "right/all";
 }

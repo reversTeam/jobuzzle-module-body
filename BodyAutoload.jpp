@@ -4,7 +4,7 @@ class BodyAutoload extends MasterAutoload {
 
 	confModuleName = 'Body';
 
-	onBootstrap : function () {
+	init : function () {
 		var templateManager = serviceLocator.get('TemplateManager');
 		React['render'](React['createElement'](
 			templateManager.get('body_base_main_template').getView(), null),

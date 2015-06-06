@@ -1,7 +1,8 @@
 header#header {
-	@include background-opacity($primary_color, 0.6);
-	height : 60px;
-	width : 100%;
+	@include background-opacity($primary_color, 0.7);
+	height : $line_height_logo;
+	width : $right_content_width;
+	z-index: 999;
 	position: fixed;
 
 	div#breadcrum {
@@ -10,14 +11,14 @@ header#header {
 
 		i.fa {
 			margin-right: 20px;
-			line-height: 60px;
+			line-height: $line_height_logo;
 			font-size : 35px;
 			cursor: pointer;
 		}
 
 		div#breadcrum_link {
 			display : inline-block;
-			line-height: 60px;
+			line-height: $line_height_logo;
 			vertical-align: top;
 
 			span {
@@ -25,6 +26,39 @@ header#header {
 				vertical-align: top;
 				font-weight: 300;
 			}
+		}
+
+	}
+	div#header-right {
+		display: inline-block;
+		height: $line_height_logo;
+		float: right;
+
+		div#header-right-icons {
+			display : inline-block;
+			line-height: $line_height_logo + 2px;
+			vertical-align: top;
+			margin-right : 10px;
+			transition: 0.3s;
+
+			i {
+				text-shadow: none;
+				color : rgba(white, 0.4);
+				margin-right : 15px;
+				font-size: 22px;
+				cursor: pointer;
+
+				&:hover {
+					color : rgba(white, 0.7);
+				}
+			}
+		}
+
+		div.student-display-miniature {
+			display : inline-block;
+			margin-right : 30px;
+			margin-top: ($line_height_logo - 40px - 4px) / 2;
+			cursor : pointer;
 		}
 	}
 }

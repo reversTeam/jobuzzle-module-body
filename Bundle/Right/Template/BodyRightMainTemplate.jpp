@@ -7,20 +7,31 @@ class BodyRightMainTemplate extends MasterTemplate {
 	onListen : function () {
 		var dispatcher = _super();
 
-		// dispatcher.listen('Body:Right:coverHide', this, this.test);
+		dispatcher.listen('Body:Right:coverHide', this, this.closeNotification);
+		dispatcher.listen('Body:Notification:open', this, this.openNotification.bind(this));
+		dispatcher.listen('Body:Notification:close', this, this.closeNotification.bind(this));
 		dispatcher.listen('Body:Content:change', this, this.contentChange.bind(this));
 
 		return dispatcher;
+	}
+
+	openNotification : function () {
+		var dispatcher = serviceLocator.get('Dispatcher');
+
+		dispatcher.trigger('Body:Right:coverShow');
+		this._view.openNotification();
+	}
+
+	closeNotification : function () {
+		if (this._view.state.notification.open) {
+			this._view.closeNotification();
+		}
 	}
 
 	contentChange : function (trigger, datas) {
 		if (!datas || !datas.content || !datas.content == undefined || datas.content == null)
 			throw "You can\'t send an empty DOM for the content";
 		this._view.changeContent(datas.content);
-	}
-
-	test : function () {
-		console.log('coverClose');
 	}
 
 }
