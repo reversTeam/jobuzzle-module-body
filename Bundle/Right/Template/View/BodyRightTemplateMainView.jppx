@@ -3,13 +3,21 @@
 
 class BodyRightTemplateMainView extends MasterView {
 
+	_allTemplates : {};
+	_initialTemplate : 'example_book_main_template';
+
 	initialState : function () {
-		return ({
-			current : 'example_book_main_template',
-			content : {
-				'example_book_main_template' : this.getTemplate('example_book_main_template')
-			}
-		});
+		var ret = {};
+		var template = this.getTemplate(this._initialTemplate);
+		this._allTemplates[this._initialTemplate] = serviceLocator.get('TemplateManager').get(this._initialTemplate);
+		this._allTemplates[this._initialTemplate].visible();
+		ret.notification = {};
+		ret.notification.open = false;
+		ret.current = this._initialTemplate;
+		ret.content = {};
+		ret.content[this._initialTemplate] = template;
+
+		return ret;
 	}
 
 	onClick : function () {
@@ -17,24 +25,49 @@ class BodyRightTemplateMainView extends MasterView {
 		// dispatcher.trigger('Body:Right:coverShow');
 	}
 
+	openNotification : function () {
+		this.setState({ notification : {
+			open : true
+		}});
+	}
+
+	closeNotification : function () {
+		this.setState({ notification : {
+			open : false
+		}});
+	}
+
 	changeContent : function (content) {
-		if (!this.state.content[content]) {
-			var tmp = this.state.content;
-			var template = serviceLocator.get('TemplateManager').get(content)
-			var view = template._view;
-			tmp[content] = React['createElement'](template.getView(this._template), null);
-			this.setState({ content : tmp });
+		if (content == this.state.current)
+			return ;
+		var tmp = this.state.content;
+		if (!this._allTemplates[content]) {
+			tmp[content] = this.getTemplate(content);
+			this._allTemplates[content] = serviceLocator.get('TemplateManager').get(content);
 		}
+		this._allTemplates[content].visible();
+		if (this._allTemplates[this.state.current])
+			this._allTemplates[this.state.current].invisible();
 		this.setState({
-			current : content
+			current : content,
+			content : tmp
 		})
 	}
 
 	render : function () {
+		var self = this;
+		var classNotifications = '';
+		if (this.state.notification.open)
+			classNotifications = 'open';
 		return (<div id="right" onClick={this.onClick.bind(this)}>
 			{this.getTemplate('body_right_header_template')}
+			<div id="notifications" className={classNotifications}>
+				{this.getTemplate('notification_panel_main_template')}
+			</div>
 			<div id="content">
-				{this.state.content[this.state.current]}
+				{Object.keys(this.state.content).map(function (i) {
+					return self.state.content[i];
+				})}
 			</div>
 		</div>);
 	}

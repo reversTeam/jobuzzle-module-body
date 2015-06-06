@@ -3,10 +3,34 @@
 
 class BodyRightTemplateHeaderView extends MasterView {
 
+	initialState : function () {
+		var state = {};
+
+		state.me = false;
+
+		return state;
+	}
+
+	updateMe : function () {
+		var store = serviceLocator.get('ServiceManager').get('store_manager_main_service');
+		this.setState({ me : store.getMe() });
+	}
+
 	render : function () {
+		var meMiniature = false;
+		if (this.state.me)
+			meMiniature = this.state.me.displayMiniature();
 		return (
 			<header id="header">
 				{this.getTemplate('body_right_breadcrum_template')}
+				<div id="header-right">
+					<div id="header-right-icons">
+						<i className="fa fa-envelope-o"></i>
+						<i className="fa fa-bell-o" onClick={this._template.openNotification.bind(this._template)}></i>
+						<i className="fa fa-cog"></i>
+					</div>
+					{meMiniature}
+				</div>
 			</header>
 		);
 	}

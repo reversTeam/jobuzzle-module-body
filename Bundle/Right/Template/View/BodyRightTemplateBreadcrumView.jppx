@@ -15,7 +15,7 @@ class BodyRightTemplateBreadcrumView extends MasterView {
 
 		return (
 			<div id="breadcrum">
-				<i className="fa fa-home" data-url="/authors/theotime-riviere/books/create" data-template="example_book_main_template" onClick={this.link}></i>
+				<i className="fa fa-home" data-url="/timeline" data-template="student_display_main_template" onClick={this.link}></i>
 				<div id="breadcrum_link" key="all">
 					{self.state.path.map(function (elem, id) {
 						return (<span key={id} data-url={elem.link} data-template="example_book_main_template" onClick={self.link}>{' / '+ elem.name}</span>);

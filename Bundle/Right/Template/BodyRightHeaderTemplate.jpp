@@ -6,8 +6,21 @@ class BodyRightHeaderTemplate extends MasterTemplate {
 
 	onListen : function () {
 		var dispatcher = _super();
+		var test = 'TOTO';
+
+		dispatcher.listen('Store:Me:update', this, this.updateMe.bind(this));
 
 		return dispatcher;
+	}
+
+	openNotification : function () {
+		var dispatcher = serviceLocator.get('Dispatcher');
+
+		dispatcher.trigger('Body:Notification:open');
+	}
+
+	updateMe : function () {
+		this._view.updateMe();
 	}
 
 }
