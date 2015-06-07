@@ -4,6 +4,7 @@
 	display: inline-block;
 	vertical-align: top;
 	overflow-y: scroll;
+	margin-left: $left_content_width;
 
 	@import "right/all";
 }

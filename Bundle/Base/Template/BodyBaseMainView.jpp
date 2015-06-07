@@ -4,9 +4,27 @@ class BodyBaseMainTemplate extends MasterTemplate {
 
 	_viewClassName = 'BodyBaseTemplateMainView';
 
+	posY = 0;
+
 	onListen : function () {
-		_super();
-		var dispatcher = serviceLocator.get('Dispatcher');
+		var dispatcher = _super();
+
+		dispatcher.listen('*:*:coverShow', this, this.lockScroll.bind(this));
+		dispatcher.listen('*:*:coverHide', this, this.unlockScroll.bind(this));
+
+	}
+
+	lockScroll : function () {
+		this.posY = document.body.scrollTop;
+		this._view.lockScroll(true);
+	}
+
+	unlockScroll : function () {
+		var self = this;
+		setTimeout(function () {
+			window.scrollTo(document.body.scrollLeft, self.posY);
+		}, 10);
+		this._view.lockScroll(false);
 	}
 
 }

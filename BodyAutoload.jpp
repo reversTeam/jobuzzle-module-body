@@ -4,7 +4,28 @@ class BodyAutoload extends MasterAutoload {
 
 	confModuleName = 'Body';
 
+	initialize : function () {
+		_super();
+		this.onListen();
+	}
+
 	init : function () {
+		var templateManager = serviceLocator.get('TemplateManager');
+		React['render'](React['createElement']( 'div', {id : 'webApp'},
+			React['createElement']('div', { className : 'center' }, 
+				React['createElement'](templateManager.get('navigation_loader_main_template').getView())
+			)),
+			document.getElementsByTagName('body')[0]
+		);
+	}
+
+	onListen : function () {
+		var dispatcher = serviceLocator.get('Dispatcher');
+
+		dispatcher.listen('User:Me:Init', this, this.userInit.bind(this));
+	}
+
+	userInit : function () {
 		var templateManager = serviceLocator.get('TemplateManager');
 		React['render'](React['createElement'](
 			templateManager.get('body_base_main_template').getView(), null),

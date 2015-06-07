@@ -12,13 +12,14 @@ class BodyRightTemplateBreadcrumView extends MasterView {
 
 	render : function () {
 		var self = this;
+		var router = serviceLocator.get('Router');
 
 		return (
 			<div id="breadcrum">
-				<i className="fa fa-home" data-url="/timeline" data-template="student_display_main_template" onClick={this.link}></i>
+				<i className="fa fa-home" data-url={router.build('/')} onClick={this.link}></i>
 				<div id="breadcrum_link" key="all">
 					{self.state.path.map(function (elem, id) {
-						return (<span key={id} data-url={elem.link} data-template="example_book_main_template" onClick={self.link}>{' / '+ elem.name}</span>);
+						return (<span key={id} data-url={elem.link} onClick={self.link}>{' / '+ elem.name}</span>);
 					})}
 				</div>
 			</div>
