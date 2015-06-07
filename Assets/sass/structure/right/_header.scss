@@ -4,6 +4,8 @@ header#header {
 	width : $right_content_width;
 	z-index: 999;
 	position: fixed;
+	animation: fadeIn 1s linear both;
+	opacity: 0;
 
 	div#breadcrum {
 		margin-left : 20px;
@@ -25,6 +27,7 @@ header#header {
 				font-size : 18px;
 				vertical-align: top;
 				font-weight: 300;
+				cursor : pointer;
 			}
 		}
 

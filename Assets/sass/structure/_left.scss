@@ -3,6 +3,9 @@
 	height: $left_content_height;
 	@include background-opacity($primary_color, 0.5);
 	display: inline-block;
+	position: fixed;
+	opacity: 0;
+	animation: fadeIn 1s linear both;
 
 	@import "left/all";
 }

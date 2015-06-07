@@ -5,6 +5,7 @@ class BodyBaseTemplateMainView extends MasterView {
 
 	initialState : function () {
 		return ({
+			scroll : true,
 			content : [
 				this.getTemplate('body_cover_main_template'),
 				this.getTemplate('body_left_main_template'),
@@ -13,8 +14,19 @@ class BodyBaseTemplateMainView extends MasterView {
 		});
 	}
 
+	userInit : function () {
+		this.setState({init : true});
+	}
+
+	lockScroll : function (blocked) {
+		this.setState({ scroll : !blocked });
+	}
+
 	render : function () {
-		return (<div id="webApp" key={this.keyName}>
+		var classValue = '';
+		if (!this.state.scroll)
+			classValue += 'locked';
+		return (<div id="webApp" className={classValue} key={this.keyName}>
 			{this.state.content.map(function (elem, key) {
 				return elem;
 			})}
