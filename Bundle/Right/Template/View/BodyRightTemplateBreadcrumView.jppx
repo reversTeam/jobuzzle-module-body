@@ -19,7 +19,7 @@ class BodyRightTemplateBreadcrumView extends MasterView {
 				<i className="fa fa-home" data-url={router.build('/')} onClick={this.link}></i>
 				<div id="breadcrum_link" key="all">
 					{self.state.path.map(function (elem, id) {
-						return (<span key={id} data-url={elem.link} onClick={self.link}>{' / '+ elem.name}</span>);
+						return (<span key={id} data-url={elem.link} onClick={self.link}>{id > 0 ? ' / '+ elem.name : elem.name}</span>);
 					})}
 				</div>
 			</div>
