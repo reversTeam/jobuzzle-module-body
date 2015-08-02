@@ -5,7 +5,7 @@
 	display: inline-block;
 	position: fixed;
 	opacity: 0;
-	animation: fadeIn 1s linear both;
+	@include animation('fadeIn 1s linear both');
 
 	@import "left/all";
 }
