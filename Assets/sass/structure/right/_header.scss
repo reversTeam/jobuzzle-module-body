@@ -4,7 +4,7 @@ header#header {
 	width : $right_content_width;
 	z-index: 999;
 	position: fixed;
-	animation: fadeIn 1s linear both;
+	@include animation('fadeIn 1s linear both');
 	opacity: 0;
 
 	div#breadcrum {
