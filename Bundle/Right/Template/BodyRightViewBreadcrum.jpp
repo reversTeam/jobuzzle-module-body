@@ -21,13 +21,14 @@ class BodyRightBreadcrumTemplate extends MasterTemplate {
 		var path = window.location.pathname.toString().substr(1).split('/');
 		var len = path.length;
 		var link = '';
+		var elem = {};
 
 		for (var i = 0; i < len; ++i) {
 			link += '/'+ path[i];
-			links.push({
-				name : path[i].toUpperCase(),
-				link : link,
-			});
+			elem = {};
+			elem['name'] = path[i].toUpperCase();
+			elem['link'] = link;
+			links.push(elem);
 		}
 		return links;
 	}
