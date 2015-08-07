@@ -1,5 +1,3 @@
-#import (Config.path +'/Kernel/Template/MasterTemplate') = MasterTemplate;
-
 class BodyCoverMainTemplate extends MasterTemplate {
 
 	_viewClassName = 'BodyCoverTemplateMainView';
@@ -32,5 +30,3 @@ class BodyCoverMainTemplate extends MasterTemplate {
 	}
 
 }
-
-#export BodyCoverMainTemplate;

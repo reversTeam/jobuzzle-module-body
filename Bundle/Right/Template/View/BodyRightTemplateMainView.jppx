@@ -1,6 +1,3 @@
-#import (Config.path +'/Kernel/Template/View/MasterView') = MasterView;
-
-
 class BodyRightTemplateMainView extends MasterView {
 
 	_allTemplates : {};
@@ -73,5 +70,3 @@ class BodyRightTemplateMainView extends MasterView {
 	}
 
 }
-
-#export BodyRightTemplateMainView;

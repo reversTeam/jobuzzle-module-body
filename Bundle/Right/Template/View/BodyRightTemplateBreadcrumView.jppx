@@ -1,5 +1,3 @@
-#import (Config.path +'/Kernel/Template/View/MasterView') = MasterView;
-
 class BodyRightTemplateBreadcrumView extends MasterView {
 
 	initialState : function () {
@@ -27,5 +25,3 @@ class BodyRightTemplateBreadcrumView extends MasterView {
 	}
 
 }
-
-#export BodyRightTemplateBreadcrumView;

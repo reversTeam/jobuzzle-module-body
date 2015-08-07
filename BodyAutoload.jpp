@@ -1,5 +1,3 @@
-#import (Config.path +'/Kernel/Autoload/MasterAutoload') = MasterAutoload;
-
 class BodyAutoload extends MasterAutoload {
 
 	confModuleName = 'Body';
@@ -34,5 +32,3 @@ class BodyAutoload extends MasterAutoload {
 	}
 
 }
-
-#export BodyAutoload;

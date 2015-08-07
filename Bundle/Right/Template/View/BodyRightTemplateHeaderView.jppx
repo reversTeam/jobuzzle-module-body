@@ -1,6 +1,3 @@
-#import (Config.path +'/Kernel/Template/View/MasterView') = MasterView;
-
-
 class BodyRightTemplateHeaderView extends MasterView {
 
 	initialState : function () {
@@ -47,5 +44,3 @@ class BodyRightTemplateHeaderView extends MasterView {
 	}
 
 }
-
-#export BodyRightTemplateHeaderView;
