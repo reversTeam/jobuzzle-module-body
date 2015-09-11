@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:30:10
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-09 23:02:40
 **************************************************************/
 
 div#notifications {
@@ -16,7 +16,7 @@ div#notifications {
 	width: $width_panel_notification;
 	height: calc(100% - #{$line_height_logo});
 	right: $width_panel_notification * -1;
-	transition: 0.3s;
+	transition: 0.5s;
 	z-index: 1001;
 
 	&.open {
