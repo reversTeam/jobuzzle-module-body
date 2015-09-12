@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:30:10
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-11 21:45:08
 **************************************************************/
 
 class BodyBaseMainTemplate extends MasterTemplate {
@@ -16,7 +16,7 @@ class BodyBaseMainTemplate extends MasterTemplate {
 
 	posY = 0;
 
-	onListen : function () {
+	public onListen : function () {
 		var dispatcher = _super();
 
 		dispatcher.listen('*:*:coverShow', this, this.lockScroll.bind(this));

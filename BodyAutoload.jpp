@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:30:09
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 16:59:43
 **************************************************************/
 
 class BodyAutoload extends MasterAutoload {
@@ -19,17 +19,17 @@ class BodyAutoload extends MasterAutoload {
 		this.onListen();
 	}
 
-	init : function () {
+	public init : function () {
 		var templateManager = serviceLocator.get('TemplateManager');
-		React['render'](React['createElement']( 'div', {id : 'webApp'},
-			React['createElement']('div', { className : 'center' }, 
-				React['createElement'](templateManager.get('navigation_loader_main_template').getView())
+		React['render'](React.createElement( 'div', {id : 'webApp'},
+			React.createElement('div', { className : 'center' }, 
+				React.createElement(templateManager.get('navigation_loader_main_template').getView())
 			)),
 			document.getElementsByTagName('body')[0]
 		);
 	}
 
-	onListen : function () {
+	public onListen : function () {
 		var dispatcher = serviceLocator.get('Dispatcher');
 
 		dispatcher.listen('User:Me:Init', this, this.userInit.bind(this));
@@ -37,7 +37,7 @@ class BodyAutoload extends MasterAutoload {
 
 	userInit : function () {
 		var templateManager = serviceLocator.get('TemplateManager');
-		React['render'](React['createElement'](
+		React['render'](React.createElement(
 			templateManager.get('body_base_main_template').getView(), null),
 			document.getElementsByTagName('body')[0]
 		);

@@ -7,16 +7,15 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:30:07
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 00:13:20
 **************************************************************/
 
 class BodyRightHeaderTemplate extends MasterTemplate {
 
 	_viewClassName = 'BodyRightTemplateHeaderView';
 
-	onListen : function () {
+	public onListen : function () {
 		var dispatcher = _super();
-		var test = 'TOTO';
 
 		dispatcher.listen('Store:Me:update', this, this.updateMe.bind(this));
 

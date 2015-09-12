@@ -7,44 +7,44 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:30:06
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 13:22:08
 **************************************************************/
 
 class BodyCoverTemplateMainView extends MasterView {
 
-	initialState : function () {
+	public initialState : function () {
 		return ({
 			visible : false,
 			lock : false,
-			opacity : this._template.getDefaultOpacity()
+			opacity : this['_template'].getDefaultOpacity()
 		});
 	}
 
-	coverShow : function (opacity) {
+	public coverShow : function (opacity) {
 		if (opacity == undefined || opacity == null)
-			opacity = this._template.getDefaultOpacity();
-		this.setState({ visible : true, opacity : opacity });
+			opacity = this['_template'].getDefaultOpacity();
+		this['setState']({ 'visible' : true, 'opacity' : opacity });
 	}
 
-	coverHide : function () {
+	public coverHide : function () {
 		var dispatcher = serviceLocator.get('Dispatcher');
 
-		if (this._template._referer) {
-			dispatcher.trigger(this._template._referer);
-			this._template._referer = null;
+		if (this['_template']._referer) {
+			dispatcher.trigger(this['_template']._referer);
+			this['_template']._referer = null;
 		}
-		this.setState({ visible : false });
+		this['setState']({ 'visible' : false });
 	}
 
-	lock : function () {
-		this.setState({ lock : true });
+	public lock : function () {
+		this['setState']({ 'lock' : true });
 	}
 
-	unlock : function () {
-		this.setState({ lock : false });
+	public unlock : function () {
+		this['setState']({ 'lock' : false });
 	}
 
-	render : function () {
+	public render : function () {
 		var activeState = 'disable';
 		var style = {
 			opacity : this.state.opacity / 100

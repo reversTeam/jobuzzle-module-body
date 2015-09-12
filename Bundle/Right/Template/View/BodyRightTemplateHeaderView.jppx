@@ -7,12 +7,12 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:30:07
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 13:18:01
 **************************************************************/
 
 class BodyRightTemplateHeaderView extends MasterView {
 
-	initialState : function () {
+	public initialState : function () {
 		var state = {};
 
 		state.me = false;
@@ -22,7 +22,7 @@ class BodyRightTemplateHeaderView extends MasterView {
 
 	updateMe : function () {
 		var store = serviceLocator.get('ServiceManager').get('store_manager_main_service');
-		this.setState({ me : store.getMe() });
+		this['setState']({ 'me' : store.getMe() });
 	}
 
 	getUrlSettings : function () {
@@ -36,7 +36,7 @@ class BodyRightTemplateHeaderView extends MasterView {
 		});
 	}
 
-	render : function () {
+	public render : function () {
 		var meMiniature = false;
 		if (this.state.me)
 			meMiniature = this.state.me.displayMiniature();
@@ -46,7 +46,7 @@ class BodyRightTemplateHeaderView extends MasterView {
 				<div id="header-right">
 					<div id="header-right-icons">
 						<i className="fa fa-envelope-o"></i>
-						<i className="fa fa-bell-o" onClick={this._template.openNotification.bind(this._template)}></i>
+						<i className="fa fa-bell-o" onClick={this['_template'].openNotification.bind(this['_template'])}></i>
 						<i className="fa fa-cog" data-url={this.getUrlSettings()} onClick={this.link}></i>
 					</div>
 					{meMiniature}

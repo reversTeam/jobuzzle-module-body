@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:30:07
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 00:05:54
 **************************************************************/
 
 class BodyRightTemplateMainView extends MasterView {
@@ -15,7 +15,7 @@ class BodyRightTemplateMainView extends MasterView {
 	_allTemplates : {};
 	_initialTemplate : 'example_book_main_template';
 
-	initialState : function () {
+	public initialState : function () {
 		var ret = {};
 		var template = this.getTemplate(this._initialTemplate);
 		this._allTemplates[this._initialTemplate] = serviceLocator.get('TemplateManager').get(this._initialTemplate);
@@ -35,14 +35,14 @@ class BodyRightTemplateMainView extends MasterView {
 	}
 
 	openNotification : function () {
-		this.setState({ notification : {
-			open : true
+		this['setState']({ notification : {
+			'open' : true
 		}});
 	}
 
 	closeNotification : function () {
-		this.setState({ notification : {
-			open : false
+		this['setState']({ notification : {
+			'open' : false
 		}});
 	}
 
@@ -57,13 +57,13 @@ class BodyRightTemplateMainView extends MasterView {
 		this._allTemplates[content].visible();
 		if (this._allTemplates[this.state.current])
 			this._allTemplates[this.state.current].invisible();
-		this.setState({
-			current : content,
-			content : tmp
+		this['setState']({
+			'current' : content,
+			'content' : tmp
 		})
 	}
 
-	render : function () {
+	public render : function () {
 		var self = this;
 		var classNotifications = '';
 		if (this.state.notification.open)

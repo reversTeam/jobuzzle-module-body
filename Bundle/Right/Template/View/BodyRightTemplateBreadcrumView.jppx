@@ -7,20 +7,20 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:30:07
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 13:22:28
 **************************************************************/
 
 class BodyRightTemplateBreadcrumView extends MasterView {
 
-	initialState : function () {
-		return { path : this._template.getLinks() };
+	public initialState : function () {
+		return { 'path' : this['_template'].getLinks() };
 	}
 
-	reload : function () {
-		this.setState({ path : this._template.getLinks() });
+	public reload : function () {
+		this['setState']({ 'path' : this['_template'].getLinks() });
 	}
 
-	render : function () {
+	public render : function () {
 		var self = this;
 		var router = serviceLocator.get('Router');
 

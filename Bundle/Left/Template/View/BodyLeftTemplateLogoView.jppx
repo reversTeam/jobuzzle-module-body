@@ -7,12 +7,12 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:30:06
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-11 21:23:01
 **************************************************************/
 
 class BodyLeftTemplateLogoView extends MasterView {
 
-	render : function () {
+	public render : function () {
 		return (
 			<div id="logo_left">
 				<div id="logo"></div>

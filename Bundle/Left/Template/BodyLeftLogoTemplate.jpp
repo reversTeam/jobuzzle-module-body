@@ -7,14 +7,14 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:30:06
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-11 21:45:19
 **************************************************************/
 
 class BodyLeftLogoTemplate extends MasterTemplate {
 
 	_viewClassName = 'BodyLeftTemplateLogoView';
 
-	onListen : function () {
+	public onListen : function () {
 		_super();
 		var dispatcher = serviceLocator.get('Dispatcher');
 	}
