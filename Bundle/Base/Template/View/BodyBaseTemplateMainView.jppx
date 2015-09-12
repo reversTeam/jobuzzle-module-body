@@ -7,12 +7,12 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:30:06
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 00:04:57
 **************************************************************/
 
 class BodyBaseTemplateMainView extends MasterView {
 
-	initialState : function () {
+	public initialState : function () {
 		return ({
 			scroll : true,
 			content : [
@@ -24,14 +24,14 @@ class BodyBaseTemplateMainView extends MasterView {
 	}
 
 	userInit : function () {
-		this.setState({init : true});
+		this['setState']({ 'init' : true});
 	}
 
 	lockScroll : function (blocked) {
-		this.setState({ scroll : !blocked });
+		this['setState']({ 'scroll' : !blocked });
 	}
 
-	render : function () {
+	public render : function () {
 		var classValue = '';
 		if (!this.state.scroll)
 			classValue += 'locked';

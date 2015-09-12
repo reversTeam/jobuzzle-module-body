@@ -7,12 +7,12 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:30:07
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 00:05:16
 **************************************************************/
 
 class BodyLeftTemplateMainView extends MasterView {
 
-	initialState : function () {
+	public initialState : function () {
 		return {
 			elements : []
 		}
@@ -23,10 +23,10 @@ class BodyLeftTemplateMainView extends MasterView {
 		var template = this.getTemplate(datas.templateName);
 
 		elements.push(template);
-		this.setState({ elements : elements });
+		this['setState']({ 'elements' : elements });
 	}
 
-	render : function () {
+	public render : function () {
 		return (<div id="left">
 			{this.getTemplate('body_left_logo_template')}
 			<div id="panels">
