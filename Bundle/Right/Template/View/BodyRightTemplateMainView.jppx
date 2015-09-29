@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 00:05:54
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-25 00:30:54
 **************************************************************/
 
 class BodyRightTemplateMainView extends MasterView {
@@ -20,11 +20,11 @@ class BodyRightTemplateMainView extends MasterView {
 		var template = this.getTemplate(this._initialTemplate);
 		this._allTemplates[this._initialTemplate] = serviceLocator.get('TemplateManager').get(this._initialTemplate);
 		this._allTemplates[this._initialTemplate].visible();
-		ret.notification = {};
-		ret.notification.open = false;
-		ret.current = this._initialTemplate;
-		ret.content = {};
-		ret.content[this._initialTemplate] = template;
+		ret['notification'] = {};
+		ret['notification']['open'] = false;
+		ret['current'] = this._initialTemplate;
+		ret['content'] = {};
+		ret['content'][this._initialTemplate] = template;
 
 		return ret;
 	}
@@ -35,28 +35,28 @@ class BodyRightTemplateMainView extends MasterView {
 	}
 
 	openNotification : function () {
-		this['setState']({ notification : {
+		this['setState']({ 'notification' : {
 			'open' : true
 		}});
 	}
 
 	closeNotification : function () {
-		this['setState']({ notification : {
+		this['setState']({ 'notification' : {
 			'open' : false
 		}});
 	}
 
 	changeContent : function (content) {
-		if (content == this.state.current)
+		if (content == this.state['current'])
 			return ;
-		var tmp = this.state.content;
+		var tmp = this.state['content'];
 		if (!this._allTemplates[content]) {
 			tmp[content] = this.getTemplate(content);
 			this._allTemplates[content] = serviceLocator.get('TemplateManager').get(content);
 		}
 		this._allTemplates[content].visible();
-		if (this._allTemplates[this.state.current])
-			this._allTemplates[this.state.current].invisible();
+		if (this._allTemplates[this.state['current']])
+			this._allTemplates[this.state['current']].invisible();
 		this['setState']({
 			'current' : content,
 			'content' : tmp
@@ -66,7 +66,7 @@ class BodyRightTemplateMainView extends MasterView {
 	public render : function () {
 		var self = this;
 		var classNotifications = '';
-		if (this.state.notification.open)
+		if (this.state['notification']['open'])
 			classNotifications = 'open';
 		return (<div id="right" onClick={this.onClick.bind(this)}>
 			{this.getTemplate('body_right_header_template')}
@@ -74,8 +74,8 @@ class BodyRightTemplateMainView extends MasterView {
 				{this.getTemplate('notification_panel_main_template')}
 			</div>
 			<div id="content">
-				{Object.keys(this.state.content).map(function (i) {
-					return self.state.content[i];
+				{Object.keys(this.state['content']).map(function (i) {
+					return self.state['content'][i];
 				})}
 			</div>
 		</div>);

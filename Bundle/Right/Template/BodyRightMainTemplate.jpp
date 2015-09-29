@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-11 21:45:38
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-25 00:10:51
 **************************************************************/
 
 class BodyRightMainTemplate extends MasterTemplate {
@@ -33,15 +33,15 @@ class BodyRightMainTemplate extends MasterTemplate {
 	}
 
 	closeNotification : function () {
-		if (this._view.state.notification.open) {
-			this._view.closeNotification();
+		if (this['_view'].state['notification']['open']) {
+			this['_view'].closeNotification();
 		}
 	}
 
 	contentChange : function (trigger, datas) {
-		if (!datas || !datas.content || !datas.content == undefined || datas.content == null)
+		if (!datas || !datas['content'] || datas['content'] == undefined || datas['content'] == null)
 			throw "You can\'t send an empty DOM for the content";
-		this._view.changeContent(datas.content);
+		this._view.changeContent(datas['content']);
 	}
 
 }

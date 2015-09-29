@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 00:04:57
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-22 00:30:44
 **************************************************************/
 
 class BodyBaseTemplateMainView extends MasterView {
@@ -35,10 +35,13 @@ class BodyBaseTemplateMainView extends MasterView {
 		var classValue = '';
 		if (!this.state.scroll)
 			classValue += 'locked';
-		return (<div id="webApp" className={classValue} key={this.keyName}>
-			{this.state.content.map(function (elem, key) {
-				return elem;
-			})}
+		return (<div>
+				<div id="backgroundWebApp"></div>
+				<div id="webApp" className={classValue} key={this.keyName}>
+					{this.state.content.map(function (elem, key) {
+						return elem;
+					})}
+				</div>
 		</div>);
 	}
 
