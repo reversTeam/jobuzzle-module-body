@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 13:22:28
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-25 01:25:05
 **************************************************************/
 
 class BodyRightTemplateBreadcrumView extends MasterView {
@@ -26,7 +26,7 @@ class BodyRightTemplateBreadcrumView extends MasterView {
 
 		return (
 			<div id="breadcrum">
-				<i className="fa fa-home" data-url={router.build('/')} onClick={this.link}></i>
+				<i className="fa fa-home" data-url="/" onClick={this.link}></i>
 				<div id="breadcrum_link" key="all">
 					{self.state.path.map(function (elem, id) {
 						return (<span key={id} data-url={elem.link} onClick={self.link}>{id > 0 ? ' / '+ elem.name : elem.name}</span>);

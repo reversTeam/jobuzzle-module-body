@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 13:18:01
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-20 19:13:58
 **************************************************************/
 
 class BodyRightTemplateHeaderView extends MasterView {
@@ -15,7 +15,7 @@ class BodyRightTemplateHeaderView extends MasterView {
 	public initialState : function () {
 		var state = {};
 
-		state.me = false;
+		state['me'] = false;
 
 		return state;
 	}
@@ -27,19 +27,19 @@ class BodyRightTemplateHeaderView extends MasterView {
 
 	getUrlSettings : function () {
 		var router = serviceLocator.get('Router');
-		var entity = this.state.me;
+		var entity = this.state['me'];
 		if (!entity)
 			return ;
 
 		return router.build('/student/view/update', {
-			student_url : entity.getUrl()
+			'student_url' : entity.getUrl()
 		});
 	}
 
 	public render : function () {
 		var meMiniature = false;
-		if (this.state.me)
-			meMiniature = this.state.me.displayMiniature();
+		if (this.state['me'])
+			meMiniature = this.state['me']['displayMiniature']();
 		return (
 			<header id="header">
 				{this.getTemplate('body_right_breadcrum_template')}

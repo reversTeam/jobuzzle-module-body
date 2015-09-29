@@ -7,16 +7,16 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 13:22:08
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-20 19:20:22
 **************************************************************/
 
 class BodyCoverTemplateMainView extends MasterView {
 
 	public initialState : function () {
 		return ({
-			visible : false,
-			lock : false,
-			opacity : this['_template'].getDefaultOpacity()
+			'visible' : false,
+			'lock' : false,
+			'opacity' : this['_template'].getDefaultOpacity()
 		});
 	}
 
@@ -47,10 +47,10 @@ class BodyCoverTemplateMainView extends MasterView {
 	public render : function () {
 		var activeState = 'disable';
 		var style = {
-			opacity : this.state.opacity / 100
+			opacity : this.state['opacity'] / 100
 		};
 
-		if (this.state.visible || this.state.lock)
+		if (this.state['visible'] || this.state['lock'])
 			activeState = 'enable'
 		return (<div className={activeState} style={style} id="cover" onClick={this.coverHide.bind(this)}></div>);
 	}
