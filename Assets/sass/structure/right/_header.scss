@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-09 18:45:29
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-06 10:29:41
 **************************************************************/
 
 header#header {
@@ -71,10 +71,8 @@ header#header {
 		}
 
 		div.user-display-miniature {
-			display : inline-block;
 			margin-right : 30px;
 			margin-top: ($line_height_logo - 40px - 4px) / 2;
-			cursor : pointer;
 		}
 	}
 }
