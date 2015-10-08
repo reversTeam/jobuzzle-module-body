@@ -36,6 +36,7 @@ class BodyBaseTemplateMainView extends MasterView {
 		if (!this.state.scroll)
 			classValue += 'locked';
 		return (<div>
+				<div id="backgroundWebApp"></div>
 				<div id="webApp" className={classValue} key={this.keyName}>
 					{this.state.content.map(function (elem, key) {
 						return elem;

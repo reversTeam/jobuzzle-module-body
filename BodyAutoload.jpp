@@ -28,7 +28,7 @@ class BodyAutoload extends MasterAutoload {
 						React.createElement(templateManager.get('navigation_loader_main_template').getView())
 					)
 				),
-				React.createElement( 'div', {id : 'backgroundWebApp'}, null)
+				React.createElement( 'div', {id : 'backgroundWebApp', className : 'animate'}, null)
 			),
 			document.getElementsByTagName('body')[0]
 		);
