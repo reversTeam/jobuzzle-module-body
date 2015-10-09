@@ -1,0 +1,27 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-09 20:30:11
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-09 20:40:50
+**************************************************************/
+
+div.centerButton {
+	width: 100%;
+	text-align: center;
+}
+
+button.secondary {
+	background-color: $secondary_color;
+	border : 1px solid white;
+	color: white;
+	font-weight: bold;
+	padding: 5px 10px;
+	font-size: 14px;
+	border-radius: 1px;
+	outline : none;
+}
