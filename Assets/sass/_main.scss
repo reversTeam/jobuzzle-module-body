@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-09 20:30:43
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 23:51:49
 **************************************************************/
 
 @import "vars/all";
@@ -25,6 +25,17 @@ div#backgroundWebApp {
 	-o-background-size: 100% 100%; 
 	background-size: 100% 100%;
 
+	transition: 0.5s;
+	-moz-transition: 0.5s;
+
+	&.disconnected {
+		filter: sepia(1);
+        -webkit-filter: sepia(1);
+        -moz-filter: sepia(1);
+        -o-filter: sepia(1);
+        -ms-filter: sepia(1);
+	}
+
 	&.animate {
 		@include animation('fadeIn 0.1s linear both');
 	}
@@ -33,6 +44,16 @@ div#backgroundWebApp {
 div#webApp {
 	min-height: $web_app_height;
 	width: 100%;
+	transition: 0.5s;
+	-moz-transition: 0.5s;
+
+	&.disconnected {
+		filter: sepia(1);
+        -webkit-filter: sepia(1);
+        -moz-filter: sepia(1);
+        -o-filter: sepia(1);
+        -ms-filter: sepia(1);
+	}
 
 	&.locked {
 		overflow: hidden;

@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-11 21:44:43
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 23:42:29
 **************************************************************/
 
 class BodyCoverMainTemplate extends MasterTemplate {
@@ -22,8 +22,6 @@ class BodyCoverMainTemplate extends MasterTemplate {
 		var dispatcher = _super();
 
 		dispatcher.listen('*:*:coverShow', this, this.coverShow.bind(this));
-		dispatcher.listen('Client:Websocket:connect', this, this.coverHide.bind(this));
-		dispatcher.listen('Client:Websocket:disconnect', this, this.coverShow.bind(this));
 
 		return dispatcher;
 	}
