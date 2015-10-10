@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-09 20:40:50
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 20:32:56
 **************************************************************/
 
 div.centerButton {
@@ -24,4 +24,13 @@ button.secondary {
 	font-size: 14px;
 	border-radius: 1px;
 	outline : none;
+	transition : 0.2s;
+
+	&:hover {
+		background-color: lighten($secondary_color, 5);
+	}
+
+	&:active {
+		background-color: darken($secondary_color, 5);
+	}
 }
