@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-11 21:45:08
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 23:45:26
 **************************************************************/
 
 class BodyBaseMainTemplate extends MasterTemplate {
@@ -21,6 +21,8 @@ class BodyBaseMainTemplate extends MasterTemplate {
 
 		dispatcher.listen('*:*:coverShow', this, this.lockScroll.bind(this));
 		dispatcher.listen('*:*:coverHide', this, this.unlockScroll.bind(this));
+		dispatcher.listen('Client:Websocket:connect', this, this.connected.bind(this));
+		dispatcher.listen('Client:Websocket:disconnect', this, this.disconnected.bind(this));
 
 	}
 
@@ -35,6 +37,14 @@ class BodyBaseMainTemplate extends MasterTemplate {
 			window.scrollTo(document.body.scrollLeft, self.posY);
 		}, 10);
 		this._view.lockScroll(false);
+	}
+
+	connected : function () {
+		this._view.setConnected(true);
+	}
+
+	disconnected : function () {
+		this._view.setConnected(false);
 	}
 
 }
