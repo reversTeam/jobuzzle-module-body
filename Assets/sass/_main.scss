@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 23:51:49
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-28 23:05:09
 **************************************************************/
 
 @import "vars/all";
@@ -18,13 +18,6 @@ div#backgroundWebApp {
 	z-index: -1000;
 	width: 100%;
 	height: 100%;
-	background-image: url($webapp_background);
-	// background-attachment: fixed;
-	-webkit-background-size: 100% 100%; 
-	-moz-background-size: 100% 100%; 
-	-o-background-size: 100% 100%; 
-	background-size: 100% 100%;
-
 	transition: 0.5s;
 	-moz-transition: 0.5s;
 
