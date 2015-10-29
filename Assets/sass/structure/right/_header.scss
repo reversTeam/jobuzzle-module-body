@@ -7,17 +7,18 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 23:41:08
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-28 22:09:12
 **************************************************************/
 
 header#header {
-	@include background-opacity($primary_color, 0.7);
+	background-color : lighten($primary_color, 5);
 	height : $line_height_logo;
 	width : $right_content_width;
 	z-index: 999;
 	position: fixed;
 	@include animation('fadeIn 1s linear both');
 	opacity: 0;
+	color : $white_color;
 
 	div#breadcrum {
 		margin-left : 20px;
