@@ -7,13 +7,15 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:30:10
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-29 14:21:13
 **************************************************************/
 
 div#logo_left {
 	padding-top : $margin_top_logo;
 
 	div#logo {
+		// border-radius: 50%;
+		// background-color: $secondary_color;
 		background-image: url($logo_icon_left);
 		background-repeat: no-repeat;
 		background-position: bottom;
