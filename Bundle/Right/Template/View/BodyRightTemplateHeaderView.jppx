@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 23:40:04
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 12:34:02
 **************************************************************/
 
 class BodyRightTemplateHeaderView extends MasterView {
@@ -31,9 +31,7 @@ class BodyRightTemplateHeaderView extends MasterView {
 		if (!entity)
 			return ;
 
-		return router.build('/student/view/update', {
-			'student_url' : entity.getUrl()
-		});
+		return router.entityRoute(entity, 'update');
 	}
 
 	public render : function () {
