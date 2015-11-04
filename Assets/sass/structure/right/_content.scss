@@ -7,14 +7,14 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-28 23:06:18
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-02 18:06:48
 **************************************************************/
 
 #content {
 	min-height: calc(100% - 80px);
 	box-sizing: border-box;
 	margin: 70px 10px 10px 10px;
-	padding: 10px;
+	padding: 10px 10px 30px 10px;
 	@include animation('fadeIn 1s linear both');
 	opacity: 0;
 
