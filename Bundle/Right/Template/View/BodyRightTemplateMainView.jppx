@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-25 00:30:54
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-05 16:25:04
 **************************************************************/
 
 class BodyRightTemplateMainView extends MasterView {
@@ -47,6 +47,7 @@ class BodyRightTemplateMainView extends MasterView {
 	}
 
 	changeContent : function (content) {
+		var dispatcher = serviceLocator.get('Dispatcher');
 		if (content == this.state['current'])
 			return ;
 		var tmp = this.state['content'];
@@ -60,7 +61,10 @@ class BodyRightTemplateMainView extends MasterView {
 		this['setState']({
 			'current' : content,
 			'content' : tmp
-		})
+		});
+		setTimeout(function() {
+			dispatcher.trigger('Body:Content:changed', {});
+		}, 0);
 	}
 
 	public render : function () {
