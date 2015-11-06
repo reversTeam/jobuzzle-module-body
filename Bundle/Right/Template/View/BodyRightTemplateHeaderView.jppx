@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 12:34:02
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-05 23:04:07
 **************************************************************/
 
 class BodyRightTemplateHeaderView extends MasterView {
@@ -35,7 +35,10 @@ class BodyRightTemplateHeaderView extends MasterView {
 	}
 
 	public render : function () {
+		var router = serviceLocator.get('Router');
 		var meMiniature = false;
+		var urlProfile = router.entityRoute(this.state['me']);
+
 		if (this.state['me'])
 			meMiniature = this.state['me']['displayMiniature']();
 		return (
@@ -48,7 +51,7 @@ class BodyRightTemplateHeaderView extends MasterView {
 						<i className="fa fa-cog" data-url={this.getUrlSettings()} onClick={this.link}></i>
 					</div>
 					<div className="user">
-						{meMiniature}
+						<span onClick={this.link} data-url={urlProfile}>{meMiniature}</span>
 					</div>
 				</div>
 			</header>
