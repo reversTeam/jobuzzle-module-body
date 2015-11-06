@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 17:28:06
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-06 15:30:26
 **************************************************************/
 
 header#header {
@@ -74,7 +74,7 @@ header#header {
 		div.user {
 			display: inline-block;
 
-			div.user-display-miniature {
+			div.miniature {
 				margin-right : 30px;
 				margin-top: ($line_height_logo - 40px - 4px) / 2;
 			}
