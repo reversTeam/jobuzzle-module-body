@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-30 11:08:40
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-09 01:03:33
 **************************************************************/
 
 div.centerButton {
@@ -15,24 +15,175 @@ div.centerButton {
 	text-align: center;
 }
 
-button.secondary {
-	background-color: darken($secondary_color, 5);
-	border : 1px solid darken($secondary_color, 15);
-	color: darken($white_color, 0);
+button {
 	font-weight: bold;
 	padding: 5px 10px;
 	font-size: 14px;
-	border-radius: 2px;
+	border-radius: 4px;
 	outline : none;
 	transition : 0.2s;
+	cursor : pointer;
 
-	&:hover {
-		background-color: $secondary_color;
-		border : 1px solid darken($secondary_color, 10);
+	&.primary {
+		background-color: lighten($primary_color, 15);
+		border : 2px solid lighten($primary_color, 25);
+		color: lighten($white_color, 0);
+
+		&:hover {
+			background-color: arken($primary_color, 5);
+			border : 2px solid lighten($primary_color, 20);
+		}
+
+		&:active {
+			background-color: lighten($primary_color, 20);
+			border : 2px solid lighten($primary_color, 30);
+		}
+
+		&.revers {
+			color : lighten($primary_color, 10);
+			border: 2px solid lighten($primary_color, 10);
+
+			&:hover {
+				color: lighten($primary_color, 20);
+				border: 2px solid lighten($primary_color, 20);
+			}
+
+			&:active {
+				color: lighten($primary_color, 30);
+				border: 2px solid lighten($primary_color, 30);
+			}
+		}
 	}
 
-	&:active {
-		background-color: darken($secondary_color, 10);
-		border : 1px solid darken($secondary_color, 20);
+	&.secondary {
+		background-color: darken($secondary_color, 5);
+		border : 2px solid darken($secondary_color, 15);
+		color: darken($white_color, 0);
+
+		&:hover {
+			background-color: $secondary_color;
+			border : 2px solid darken($secondary_color, 10);
+		}
+
+		&:active {
+			background-color: darken($secondary_color, 10);
+			border : 2px solid darken($secondary_color, 20);
+		}
+
+		&.revers {
+			color : $secondary_color;
+			border: 2px solid $secondary_color;
+
+			&:hover {
+				color: darken($secondary_color, 10);
+				border : 2px solid darken($secondary_color, 10);
+			}
+
+			&:active {
+				color: darken($secondary_color, 20);
+				border : 2px solid darken($secondary_color, 20);
+			}
+		}
+	}
+
+	&.tercary {
+		background-color: darken($tercary_color, 5);
+		border : 2px solid darken($tercary_color, 15);
+		color: darken($white_color, 0);
+
+		&:hover {
+			background-color: $tercary_color;
+			border : 2px solid darken($tercary_color, 10);
+		}
+
+		&:active {
+			background-color: darken($tercary_color, 10);
+			border : 2px solid darken($tercary_color, 20);
+		}
+
+		&.revers {
+			color : $tercary_color;
+			border: 2px solid $tercary_color;
+
+			&:hover {
+				color: darken($tercary_color, 10);
+				border : 2px solid darken($tercary_color, 10);
+			}
+
+			&:active {
+				color: darken($tercary_color, 20);
+				border : 2px solid darken($tercary_color, 20);
+			}
+		}
+	}
+
+	&.error {
+		background-color: darken($error_color, 5);
+		border : 2px solid darken($error_color, 15);
+		color: darken($white_color, 0);
+
+		&:hover {
+			background-color: $error_color;
+			border : 2px solid darken($error_color, 10);
+		}
+
+		&:active {
+			background-color: darken($error_color, 10);
+			border : 2px solid darken($error_color, 20);
+		}
+
+		&.revers {
+			color : $error_color;
+			border: 2px solid $error_color;
+
+			&:hover {
+				color: darken($error_color, 10);
+				border : 2px solid darken($error_color, 10);
+			}
+
+			&:active {
+				color: darken($error_color, 20);
+				border : 2px solid darken($error_color, 20);
+			}
+		}
+	}
+
+	&.neutral {
+		background-color: darken($neutral_color, 15);
+		border : 2px solid darken($neutral_color, 25);
+		color: darken($white_color, 0);
+
+		&:hover {
+			background-color: arken($neutral_color, 5);
+			border : 2px solid darken($neutral_color, 20);
+		}
+
+		&:active {
+			background-color: darken($neutral_color, 20);
+			border : 2px solid darken($neutral_color, 30);
+		}
+
+		&.revers {
+			color : darken($neutral_color, 10);
+			border: 2px solid darken($neutral_color, 10);
+
+			&:hover {
+				color: darken($neutral_color, 20);
+				border: 2px solid darken($neutral_color, 20);
+			}
+
+			&:active {
+				color: darken($neutral_color, 30);
+				border: 2px solid darken($neutral_color, 30);
+			}
+		}
+	}
+
+	&.revers {
+		background-color: transparent;
+
+		&:hover, &:active {
+			background-color: transparent;
+		}
 	}
 }

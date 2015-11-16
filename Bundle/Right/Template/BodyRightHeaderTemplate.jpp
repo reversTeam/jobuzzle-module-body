@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 17:05:00
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-09 13:32:23
 **************************************************************/
 
 class BodyRightHeaderTemplate extends MasterTemplate {
@@ -19,6 +19,7 @@ class BodyRightHeaderTemplate extends MasterTemplate {
 		var dispatcher = _super();
 
 		dispatcher.listen('Store:Me:update', this, this.updateMe.bind(this));
+		// dispatcher.listen('Store:BaseUser:update', this, this.updateMe.bind(this));
 		dispatcher.listen('Store:Company:update', this, this.updateMe.bind(this));
 
 		return dispatcher;

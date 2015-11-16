@@ -7,14 +7,14 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-11 21:23:01
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-16 12:04:19
 **************************************************************/
 
 class BodyLeftTemplateLogoView extends MasterView {
 
 	public render : function () {
 		return (
-			<div id="logo_left">
+			<div id="logo_left" onClick={this.link} data-url="/">
 				<div id="logo"></div>
 				<h1>Jobuzzle</h1>
 			</div>
