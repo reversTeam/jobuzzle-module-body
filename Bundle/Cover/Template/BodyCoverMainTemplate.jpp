@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 23:42:29
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-10 14:12:36
 **************************************************************/
 
 class BodyCoverMainTemplate extends MasterTemplate {
@@ -22,21 +22,26 @@ class BodyCoverMainTemplate extends MasterTemplate {
 		var dispatcher = _super();
 
 		dispatcher.listen('*:*:coverShow', this, this.coverShow.bind(this));
+		dispatcher.listen('*:*:coverHide', this, this.coverHide.bind(this));
 
 		return dispatcher;
 	}
 
 	public coverHide : function () {
+		this._referer = null;
 		this._view.coverHide();
 	}
 
-	public coverShow : function (s, opacity) {
+	public coverShow : function (s, config) {
 		var arg = s.split(':');
 
-		if (opacity == null || opacity == undefined)
-			opacity = this.getDefaultOpacity();
+		if (!config)
+			config = {};
+
+		if (config['opacity'] == null || config['opacity'] == undefined)
+			config['opacity'] = this.getDefaultOpacity();
 		this._referer = arg[0] +':'+ arg[1] +':coverHide';
-		this._view.coverShow(opacity);
+		this._view.coverShow(config);
 	}
 
 }

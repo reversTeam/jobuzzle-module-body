@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-05 16:25:04
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-10 16:09:56
 **************************************************************/
 
 class BodyRightTemplateMainView extends MasterView {
@@ -47,6 +47,7 @@ class BodyRightTemplateMainView extends MasterView {
 	}
 
 	changeContent : function (content) {
+		var self = this;
 		var dispatcher = serviceLocator.get('Dispatcher');
 		if (content == this.state['current'])
 			return ;
@@ -58,6 +59,7 @@ class BodyRightTemplateMainView extends MasterView {
 		this._allTemplates[content].visible();
 		if (this._allTemplates[this.state['current']])
 			this._allTemplates[this.state['current']].invisible();
+
 		this['setState']({
 			'current' : content,
 			'content' : tmp
@@ -78,10 +80,9 @@ class BodyRightTemplateMainView extends MasterView {
 				{this.getTemplate('notification_panel_main_template')}
 			</div>
 			<div id="content">
-				{Object.keys(this.state['content']).map(function (i) {
-					return self.state['content'][i];
-				})}
+				{self.state['content'][self.state['current']]}
 			</div>
+			{this.getTemplate('navigation_popup_main_template')}
 		</div>);
 	}
 
