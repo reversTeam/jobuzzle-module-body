@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-10 16:10:07
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-17 14:59:11
 **************************************************************/
 
 class BodyRightMainTemplate extends MasterTemplate {
@@ -41,7 +41,8 @@ class BodyRightMainTemplate extends MasterTemplate {
 	contentChange : function (trigger, datas) {
 		if (!datas || !datas['content'] || datas['content'] == undefined || datas['content'] == null)
 			throw "You can\'t send an empty DOM for the content";
-		this._view.changeContent(datas['content']);
+		if (this._view instanceof MasterView)
+			this._view.changeContent(datas['content']);
 	}
 
 }

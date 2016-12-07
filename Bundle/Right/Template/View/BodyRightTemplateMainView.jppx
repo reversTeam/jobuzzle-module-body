@@ -7,24 +7,26 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-10 16:09:56
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-17 15:03:55
 **************************************************************/
 
 class BodyRightTemplateMainView extends MasterView {
 
 	_allTemplates : {};
-	_initialTemplate : 'example_book_main_template';
+	_initialTemplate : null;
 
 	public initialState : function () {
 		var ret = {};
-		var template = this.getTemplate(this._initialTemplate);
-		this._allTemplates[this._initialTemplate] = serviceLocator.get('TemplateManager').get(this._initialTemplate);
-		this._allTemplates[this._initialTemplate].visible();
+		if (this._initialTemplate) {
+			var template = this.getTemplate(this._initialTemplate);
+			this._allTemplates[this._initialTemplate] = serviceLocator.get('TemplateManager').get(this._initialTemplate);
+			this._allTemplates[this._initialTemplate].visible();
+			ret['content'][this._initialTemplate] = template;
+		}
 		ret['notification'] = {};
 		ret['notification']['open'] = false;
 		ret['current'] = this._initialTemplate;
 		ret['content'] = {};
-		ret['content'][this._initialTemplate] = template;
 
 		return ret;
 	}
@@ -80,7 +82,7 @@ class BodyRightTemplateMainView extends MasterView {
 				{this.getTemplate('notification_panel_main_template')}
 			</div>
 			<div id="content">
-				{self.state['content'][self.state['current']]}
+				{self.state['current'] ? self.state['content'][self.state['current']] : null}
 			</div>
 			{this.getTemplate('navigation_popup_main_template')}
 		</div>);

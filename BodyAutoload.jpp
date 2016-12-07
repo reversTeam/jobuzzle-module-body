@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-02 17:48:40
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-17 15:36:37
 **************************************************************/
 
 class BodyAutoload extends MasterAutoload {
@@ -19,21 +19,6 @@ class BodyAutoload extends MasterAutoload {
 		this.onListen();
 	}
 
-	public init : function () {
-		var templateManager = serviceLocator.get('TemplateManager');
-		React['render'](
-			React.createElement( 'div', null,
-				React.createElement( 'div', {id : 'webApp'}, 
-					React.createElement('div', { className : 'center' }, 
-						React.createElement(templateManager.get('navigation_loader_main_template').getView())
-					)
-				),
-				React.createElement( 'div', {id : 'backgroundWebApp', className : 'animate'}, null)
-			),
-			document.getElementsByTagName('body')[0]
-		);
-	}
-
 	public onListen : function () {
 		var dispatcher = serviceLocator.get('Dispatcher');
 
@@ -43,8 +28,8 @@ class BodyAutoload extends MasterAutoload {
 	userInit : function () {
 		var templateManager = serviceLocator.get('TemplateManager');
 		React['render'](React.createElement(
-			templateManager.get('body_base_main_template').getView(), null),
-			document.getElementsByTagName('body')[0]
+			templateManager.get('body_base_main_template').getView(), {key : 'Jobuzzle'}),
+			document.getElementById('webApp')
 		);
 	}
 
